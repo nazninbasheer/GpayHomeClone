@@ -52,6 +52,7 @@ app.*.map.json
 .gradle/
 build/
 app/build/
+.metadata
 
 # Local configuration file (SDK paths)
 local.properties
