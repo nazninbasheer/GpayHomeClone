@@ -1,16 +1,47 @@
-# gpayflutter
+# 💳 Google Pay Home Page UI Clone – Flutter
 
-gpay clone  Flutter project.
+A beautifully designed **Google Pay Home Screen UI clone** built using **Flutter**.  
+This project focuses entirely on **UI development**, replicating the layout, widgets, colors, and interactions of the official Google Pay home page.
 
-## Getting Started
+This clone is perfect for:
+- Practicing Flutter UI layouts  
+- Understanding Row, Column, Stack, ListView usage  
+- Building reusable widgets  
+- Learning Material Design in Flutter  
 
-This project is a starting point for a Flutter application.
+---
 
-A few resources to get you started if this is your first Flutter project:
+## 🎯 Features Included
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### ✨ Home Screen Sections
+- 👤 **Profile icon + Google Pay header**
+- 🔍 **Search bar**
+- 🔄 **Transfer section** (Pay contacts, Bank transfers)
+- 💰 **People section** (recently paid contacts)
+- 🏦 **Businesses section**
+- 🎁 **Offers & Rewards UI**
+- 📱 **Promotional cards**
+- 📌 **Scrollable lists**, rounded containers, shadows
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### 🎨 Clean UI Design
+- Material 3 themed UI
+- Reusable custom widgets
+- Proper spacing, padding & symmetrical layout
+- Fully responsive layout (mobile-ready)
+
+---
+
+## 🛠️ Tech Used
+
+### **Framework**
+- Flutter 3.x
+- Dart
+
+### **Widgets Used**
+- Column, Row, Stack
+- ListView & SingleChildScrollView
+- CircleAvatar
+- Container with BoxDecoration
+- Icons & Material UI components
+
+---
