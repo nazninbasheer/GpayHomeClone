@@ -3,22 +3,29 @@ name: Deploy Flutter Web
 on:
   push:
     branches:
-      - master
+      - main
 
 permissions:
   contents: write
 
 jobs:
-  build-deploy:
+  build:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v3
-      - uses: subosito/flutter-action@v2
+
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
         with:
-          flutter-version: "3.13.10"
-      - run: flutter pub get
-      - run: flutter clean
-      - run: flutter build web --release --base-href /GpayHomeClone/
+          flutter-version: '3.13.10' # specify exact version
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Build web
+        run: flutter build web --release
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
