@@ -9,18 +9,18 @@ permissions:
   contents: write
 
 jobs:
-  build:
+  build-deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-
+      - uses: actions/checkout@v3
       - uses: subosito/flutter-action@v2
         with:
-          channel: stable
-
-      - run: flutter build web --release
-
-      - uses: peaceiris/actions-gh-pages@v3
+          flutter-version: stable
+      - run: flutter pub get
+      - run: flutter clean
+      - run: flutter build web --release --base-href /GpayHomeClone/
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./build/web
+          publish_dir: build/web
