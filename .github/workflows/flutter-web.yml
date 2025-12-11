@@ -3,7 +3,6 @@ name: Deploy Flutter Web
 on:
   push:
     branches:
-      - main
       - master
 
 permissions:
@@ -12,36 +11,16 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
-<<<<<<< HEAD
-
     steps:
-      - uses: actions/checkout@v3
-=======
->>>>>>> 2ecc1ea6a1da3b152334401d5fb4fdb6ddf43f8e
+      - uses: actions/checkout@v2
 
-    steps:
-      - name: Checkout repo
-        uses: actions/checkout@v3
-
-      - name: Setup Flutter
-        uses: subosito/flutter-action@v2
+      - uses: subosito/flutter-action@v2
         with:
           channel: stable
-          flutter-version: '3.24.0'
 
-<<<<<<< HEAD
-      - run: flutter pub get
-      - run: flutter build web --release --verbose
-=======
-      - name: Install dependencies
-        run: flutter pub get
->>>>>>> 2ecc1ea6a1da3b152334401d5fb4fdb6ddf43f8e
+      - run: flutter build web --release
 
-      - name: Build Flutter Web
-        run: flutter build web --release
-
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+      - uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: build/web
+          publish_dir: ./build/web
