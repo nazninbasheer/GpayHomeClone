@@ -3,19 +3,26 @@ name: Deploy Flutter Web
 on:
   push:
     branches:
+      - main
       - master
+
+permissions:
+  contents: write
 
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       - uses: subosito/flutter-action@v2
         with:
           channel: stable
+          flutter-version: '3.24.0'
 
-      - run: flutter build web --release
+      - run: flutter pub get
+      - run: flutter build web --release --verbose
 
       - uses: peaceiris/actions-gh-pages@v3
         with:
