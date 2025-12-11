@@ -18,7 +18,9 @@ jobs:
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.13.10' # specify exact version
+          flutter-version: '3.13.10'
+          cache: true
+          cache-key: 'flutter-:os:-:channel:-:version:-:arch:-:hash:' 
 
       - name: Install dependencies
         run: flutter pub get
